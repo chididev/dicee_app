@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.red.shade900,
           leading: const Icon(
-            Icons.gamepad,
+            Icons.games_outlined,
             color: Colors.white,
             size: 30.0,
           ),
@@ -48,13 +48,14 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
-
+  //These variables control the dice number.
+  int rightDice = 1;
+  int leftDice = 1;
   @override
   Widget build(BuildContext context) {
-    //These variables control the dice number. They make use of the dart maths
-    //library to randomize the integers.
-    int rightDice = Random().nextInt(6)+1;
-    int leftDice = Random().nextInt(6)+1;
+    //The variables are updated randomly using the dart maths library.
+    rightDice = Random().nextInt(6)+1;
+    leftDice = Random().nextInt(6)+1;
 
     //The diceRoll function actually calls the setState method which rebuilds
     //our stateful widget and updates the dice when it is rolled.
